@@ -1,3 +1,62 @@
+# Oculometry Project
+
+This project focuses on loading, cleaning, and analyzing the oculometric data collected from the different patients participating in the experiment.
+
+## Project Structure
+
+The project consists of the following four `.py` programs:
+
+- `carrega_dades.py`: Loads the data from the database and stores it in several dictionaries.
+- `neteja_dades.py`: Cleans and filters the data. It also performs data normalization.
+- `analisis_dades.py`: Analyzes the data using several linear regression models.
+- `json_functions.py`: Contains two functions used to save and load dictionaries in JSON format.
+
+The project also contains several folders with data and images, which are used to verify that the extracted data is coherent and to perform the final analysis.
+
+## Requirements
+
+Python version 3.12 was used throughout the project, together with the following libraries:
+
+- pandas
+- matplotlib
+- json
+- os
+- seaborn
+- scipy
+- sklearn
+- sys
+- mysql-connector-python (only required if the data needs to be loaded from the database)
+
+## Files
+
+### 1. `carrega_dades.py`
+
+**IMPORTANT:** This program does not need to be executed, since the data has already been processed and saved.
+
+The program connects to the MySQL database and performs the necessary queries to obtain all the relevant data from the experiment for each patient.
+
+To ensure data persistence, a folder called `dades_docs` is created, where the following files are stored:
+
+- **`tTime.txt`**: Dictionary containing the pupil measurement times for each trial.
+- **`pupilL.txt`**: Dictionary containing the measurements from the left pupil.
+- **`pupilR.txt`**: Dictionary containing the measurements from the right pupil.
+- **`dades_assajos.txt`**: Dictionary containing the following information for each trial: SF, SP, MedsOn, PD (whether the participant has Parkinson's disease or not), `tOriginShow`, and `nControlLevel` (CT).
+
+If you want to test loading the data from the database, the following programs and versions are required:
+
+- MySQL Server version 8.0
+- MySQL Workbench version 8.0
+
+The database must also be loaded into MySQL Workbench.
+
+The program is executed from the terminal as follows:
+
+```bash
+python carrega_dades.py "<user_db>" "<password_db>"
+```
+
+(in catalan)
+
 # Projecte d'oculometria
 
 Aquest projecte es basa en carregar, netejar i analitzar les 
