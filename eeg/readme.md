@@ -1,3 +1,45 @@
+# Electroencephalogram Project
+
+This project mainly focuses on reusing and adapting existing code to carry out the following tasks:
+- Individual classification of all sources for each patient
+- Extraction of common sources for groups of participants
+- Individual classification using common sources
+- Comparison between groups using common sources
+
+## Project Structure
+
+Due to the complexity of the project, several folders and subfolders have been created. The main structure and most relevant contents are described below:
+
+- **pacients_PD**: Includes data and code specific to participants with Parkinson's disease.
+- **pacients_sans**: Contains data and code specific to healthy participants.
+- **matlab_programs_PD**: Includes MATLAB programs specific to participants with Parkinson's disease.
+- **matlab_programs_sans**: Includes MATLAB programs specific to healthy participants.
+- **matlab_programs**: Includes MATLAB programs that are not specific to any particular participant group.
+
+## Requirements
+
+- **Python**: Version 3.12.
+- **MATLAB**: Version 2023b, with the SPM12 package to use the FieldTrip toolbox.
+
+## Code Explanation
+
+### Individual classification of all sources for each patient
+
+In this first step, the sources of each participant are classified. The programs used are:
+
+- `classif_sans_SF.py`: Classifies healthy participants according to SF motivation.
+- `classif_sans_SP.py`: Classifies healthy participants according to SP motivation.
+- `classif_PD_SF.py`: Classifies participants with Parkinson's disease according to SF motivation.
+- `classif_PD_SP.py`: Classifies participants with Parkinson's disease according to SP motivation.
+
+To run any of these four programs, the following command must be entered in the terminal:
+
+```bash
+python <program_name> i_sub i_motion
+```
+
+(in catalan)
+
 # Projecte d'electroencefalogrames
 Aquest projecte se centra en, la majoria de casos, reutilitzar i adaptar codis existents per dur a terme les següents tasques:
 - Classificació individual de totes les fonts per pacient
